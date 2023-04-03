@@ -1,8 +1,5 @@
-
 import numpy as np
 import scipy.linalg
-
-
 
 def LU_decomposition(a):
     n = len(a)
@@ -15,16 +12,12 @@ def LU_decomposition(a):
             sum1 = 0
             for k in range(i):
                 sum1 += L[i, k] * U[k, j]
-
             if i <= j:
                 U[i, j] = a[i, j] - sum1
             else:
                 L[i, j] = (1 / U[j, j]) * (a[i, j] - sum1)
 
     return L, U
-
-
-
 
 
 def test():
@@ -37,66 +30,11 @@ def test():
     L, U = LU_decomposition(a)
 
     print(L_s)
-    print(L)
-    print()
+    print(L, '\n')
     print(U_s)
-    print(U)
-
-    print()
+    print(U, '\n')
     print(np.all(L == L_s), np.all(U == U_s))
-
 
 
 if __name__ == '__main__':
     test()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

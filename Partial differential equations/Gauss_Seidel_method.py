@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def check(A):
     """
     Проверяет условие сходимости метода Гаусса-Зейделя
@@ -13,7 +12,6 @@ def check(A):
     A_2 = - np.linalg.inv((L + D)) @ U
     q = np.linalg.norm(A_2, ord=2)
     assert q < 1, 'Метод не сходится'
-    
     
     
 def Gauss_Seidel_method(A, f, x0, eps=1e-6):
@@ -50,7 +48,6 @@ def Gauss_Seidel_method(A, f, x0, eps=1e-6):
 
     
     
-
 def test1():
     A = np.array([[2, 1], 
                   [1, 4]], dtype=float)
@@ -92,31 +89,14 @@ def test3():
 
 
 
-
 if __name__ == '__main__':
     print('test 1:')
     test1()
     print()
+
     print('test 2:')
     test2()
     print()
+
     print('test 3:')
     test3()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
